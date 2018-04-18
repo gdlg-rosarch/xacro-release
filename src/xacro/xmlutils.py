@@ -30,7 +30,7 @@
 # Authors: Stuart Glaser, William Woodall, Robert Haschke
 # Maintainer: Morgan Quigley <morgan@osrfoundation.org>
 
-import xml.dom.minidom
+import xml
 from .color import warning
 
 def first_child_element(elt):

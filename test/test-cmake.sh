@@ -26,15 +26,15 @@ mkdir $dir
 cd $dir
 
 # load catkin environent
-source ../../../../devel/setup.sh
+build_env=../../build_env.sh
 
 echo "*** running cmake ***"
-cmake -DCATKIN_DEVEL_PREFIX=devel -DCMAKE_INSTALL_PREFIX=install $1 || exit $?
+${build_env} cmake -DCATKIN_DEVEL_PREFIX=devel -DCMAKE_INSTALL_PREFIX=install $1 || exit $?
 
 echo
 echo "*** running make ***"
-make || exit $?
+${build_env} make || exit $?
 
 echo
 echo "*** running make install ***"
-make || exit $?
+${build_env} make || exit $?
